@@ -1,30 +1,31 @@
 import styled from "styled-components";
 import lnks from "../Data/links";
 import { useState } from "react";
-import Collections from "../components/Collections";
+import Collections from "./Collections";
+import Filter from "./Filter";
 
 function CareerBag() {
   const [links, setLinks] = useState(lnks);
-  function runone() {
-    for (let i = 0; i < links.length; i++) {
-      let current = links[i];
-      return <h2>{current[0]}</h2>;
-      // for (let j = 0; j < current[1].length; j++) {
-      //   console.log(current[1][j][0], current[1][j][1]);
-      // }
-      // console.log("\n");
-    }
-  }
+  const [filters, setFilters] = useState({
+    city: ["All"],
+    company: ["All"],
+  });
 
   return (
     <div>
-      {links.map((city) => {
-        return <Collections>{city}</Collections>;
-      })}
+      <Filter links={links} setFilters={setFilters} />
+      <CollectionsContainer>
+        {links.map((l) => {
+          const ln = l[0].toString();
+          if (filters.city.includes("All") || filters.city.includes(ln)) {
+            return <Collections filters={filters}>{l}</Collections>;
+          }
+        })}
+      </CollectionsContainer>
     </div>
   );
 }
 
-const CareerBagComponent = styled.div``;
+const CollectionsContainer = styled.div``;
 
 export default CareerBag;

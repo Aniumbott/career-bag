@@ -9,9 +9,12 @@ export default function Header(props: any) {
     <div>
       <style>
         {`
-        h2{
-            padding-left: 1rem;
-            padding-right: 0.5rem;
+        .title{
+            padding:  1rem 3rem 1rem 1rem;
+            // padding-right: 0.5rem;
+            background: #6930c3;
+            color: white;
+            border-radius: 0 50px 50px 0;
         }
         .header{
           width: 100%;
@@ -24,8 +27,9 @@ export default function Header(props: any) {
       </style>
       <GithubCorner href="#" />
       <div className="header">
-        <h2>CAREER BAG</h2>
-        <Image width={30} height={30} src={logo} />
+        <h1 className="title">
+          CAREER BAG <span>🎒</span>
+        </h1>
       </div>
       <ThemeToggle
         colorScheme={colorScheme}

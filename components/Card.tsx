@@ -1,27 +1,74 @@
-import { Card, Image, Text } from "@mantine/core";
+// import { , Image, Text } from "@mantine/core";
+import styled from "styled-components";
+import { Image } from "@mantine/core";
 
 function Carad(props: any) {
   const city = props.link;
   //   const links = props.links[1];
-  console.log(city);
+  function linkToDSrc(l: string) {
+    let sc = "https://logo.clearbit.com/";
+    l = l.substring(8);
+    let i = 0;
+    while (i < l.length && l[i] != "/") i++;
+    sc += l.substring(0, i);
+    return sc;
+  }
+
   return (
     <div>
-      <Card shadow="sm" p="xl" component="a" href={city[1]} target="_blank">
-        <Card.Section>
-          <Image
-            src={`https://logo.clearbit.com/${city[1]}`}
-            height={100}
-            width={100}
-            alt="Nahi Mila 🙄"
-          />
-        </Card.Section>
-
-        <Text weight={500} size="lg">
-          {city[0]}
-        </Text>
-      </Card>
+      <a href={city[1]} target="_blank" rel="noreferrer">
+        <Card>
+          <div className="image-container">
+            <Image className="image" src={linkToDSrc(city[1])} />
+          </div>
+          <p>{city[0]}</p>
+        </Card>
+      </a>
     </div>
   );
 }
 
+const Card = styled.div`
+  height: 12rem;
+  width: 10rem;
+  margin: 1rem;
+  background: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  transition: 0.2s ease;
+  border: none;
+  &:hover {
+    box-shadow: 0px 0px 3px 20px #6930c3;
+    /* transform: scale(1.05); */
+  }
+
+  .image-container {
+    height: 10rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .image {
+      padding: 0 0.3rem;
+      border-radius: 10px;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+  p {
+    width: 100%;
+    height: 2rem;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    text-align: center;
+    color: white;
+    background: #6930c3;
+  }
+`;
 export default Carad;
