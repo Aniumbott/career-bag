@@ -7,6 +7,7 @@ import {
   ColorScheme,
 } from "@mantine/core";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [colorScheme, setColorScheme] = useState<ColorScheme>("dark");
@@ -34,6 +35,7 @@ export default function Home() {
               toggleColorScheme={toggleColorScheme}
             />
             <CareerBag />
+            <Footer />
           </MantineProvider>
         </ColorSchemeProvider>
       </main>

@@ -24,7 +24,7 @@ function ThemeToggle(props: any) {
         {`.toggle{
             margin: 1rem;
             position: fixed;
-            bottom: 0;
+            top: 0;
             right: 0;
             z-index: 999;
         }`}
