@@ -27,8 +27,8 @@ function Filter(props: any) {
   //  State to store the selected options
   const cities = getData(false);
   const l = getData(true);
-  const [cityval, setCityval] = useState([""]);
-  const [linksval, setlinksval] = useState([""]);
+  const [cityval, setCityval] = useState(["All"]);
+  const [linksval, setlinksval] = useState(["All"]);
 
   //  Upadatae the filters state when the city or company filters are changed
   useEffect(() => {
@@ -50,8 +50,10 @@ function Filter(props: any) {
         searchable
         value={cityval}
         onChange={setCityval}
-        data={cities}
         defaultValue={["All"]}
+        data={cities}
+        clearButtonLabel="Clear selection"
+        clearable
         placeholder="Pick all cities you like"
       />
       <MultiSelect
@@ -59,8 +61,10 @@ function Filter(props: any) {
         searchable
         value={linksval}
         onChange={setlinksval}
-        data={l}
         defaultValue={["All"]}
+        data={l}
+        clearButtonLabel="Clear selection"
+        clearable
         placeholder="Pick all companies you like"
       />
     </FilterComponent>

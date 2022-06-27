@@ -43,8 +43,8 @@ const Card = styled.div`
   transition: 0.2s ease;
   border: none;
   &:hover {
-    box-shadow: 0px 0px 3px 20px #6930c3;
-    /* transform: scale(1.05); */
+    box-shadow: 0px 0px 20px 1px #a2a2a4;
+    transform: scale(1.05);
   }
 
   .image-container {
