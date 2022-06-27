@@ -15,17 +15,19 @@ export default function Header(props: any) {
             background: #6930c3;
             color: white;
             border-radius: 0 50px 50px 0;
+            margin:0;
+            margin-bottom:3rem;
         }
         .header{
           width: 100%;
             display: flex;
             flex-direction: row;
-            align-items: center;
+            align-items: flex-start;
             justify-content: flex-start;
         }
         `}
       </style>
-      <GithubCorner href="#" />
+      <GithubCorner href="https://github.com/Aniumbott/career-bag" />
       <div className="header">
         <h1 className="title">
           CAREER BAG <span>🎒</span>
