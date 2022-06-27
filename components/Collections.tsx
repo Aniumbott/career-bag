@@ -1,7 +1,11 @@
+// Modules
 import styled from "styled-components";
-import Carad from "../components/Card";
 import { Divider } from "@mantine/core";
 
+// Components
+import Carad from "../components/Card";
+
+// Main Function
 function Collections(props: any) {
   const links = props.children;
   const filters = props.filters;
@@ -23,6 +27,7 @@ function Collections(props: any) {
   );
 }
 
+// Styled Components
 const CollectionsComponent = styled.div`
   width: 90vw;
   margin: 3rem auto;

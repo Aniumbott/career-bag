@@ -1,4 +1,7 @@
+// Components
 import ThemeToggle from "./ThemeToggle";
+
+// Main Function
 export default function Header(props: any) {
   const { colorScheme, toggleColorScheme } = props;
   return (

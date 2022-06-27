@@ -1,7 +1,9 @@
+// Modules
 import styled from "styled-components";
 import { MultiSelect } from "@mantine/core";
 import { useEffect, useState } from "react";
 
+// Main Function
 function Filter(props: any) {
   const { links, setFilters } = props;
 
@@ -39,7 +41,6 @@ function Filter(props: any) {
     for (let i = 0; i < linksval.length; i++) {
       filterd.company.push(linksval[i]);
     }
-    // console.log(filterd);
     setFilters(filterd);
   }, [cityval, linksval]);
 
@@ -71,8 +72,8 @@ function Filter(props: any) {
   );
 }
 
+// Styled Components
 const FilterComponent = styled.div`
-  /* height: 2rem; */
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -81,7 +82,6 @@ const FilterComponent = styled.div`
   width: 90vw;
   .filter {
     min-width: 20rem;
-    /* width: 30rem; */
     margin: 0 1rem;
   }
 `;

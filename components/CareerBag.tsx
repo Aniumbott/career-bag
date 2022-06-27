@@ -1,11 +1,14 @@
-import styled from "styled-components";
-import lnks from "../Data/links";
+// Modules
+import links from "../Data/links";
 import { useState } from "react";
+
+// Components
 import Collections from "./Collections";
 import Filter from "./Filter";
 
+// Main Function
 function CareerBag() {
-  const [links, setLinks] = useState(lnks);
+  // State to store the selected options
   const [filters, setFilters] = useState({
     city: ["All"],
     company: ["All"],
@@ -14,18 +17,16 @@ function CareerBag() {
   return (
     <div>
       <Filter links={links} setFilters={setFilters} />
-      <CollectionsContainer>
+      <div>
         {links.map((l) => {
           const ln = l[0].toString();
           if (filters.city.includes("All") || filters.city.includes(ln)) {
             return <Collections filters={filters}>{l}</Collections>;
           }
         })}
-      </CollectionsContainer>
+      </div>
     </div>
   );
 }
-
-const CollectionsContainer = styled.div``;
 
 export default CareerBag;

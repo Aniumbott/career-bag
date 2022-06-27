@@ -1,15 +1,20 @@
+// Modules
 import { useState } from "react";
-import Head from "next/head";
-import CareerBag from "../components/CareerBag";
 import {
   ColorSchemeProvider,
   MantineProvider,
   ColorScheme,
 } from "@mantine/core";
+import Head from "next/head";
+
+// Components
+import CareerBag from "../components/CareerBag";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+// Main Function
 export default function Home() {
+  // Color Scheme
   const [colorScheme, setColorScheme] = useState<ColorScheme>("dark");
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
@@ -30,11 +35,16 @@ export default function Home() {
             withGlobalStyles
             withNormalizeCSS
           >
+            {/* Header */}
             <Header
               colorScheme={colorScheme}
               toggleColorScheme={toggleColorScheme}
             />
+
+            {/* App */}
             <CareerBag />
+
+            {/* Footer */}
             <Footer />
           </MantineProvider>
         </ColorSchemeProvider>

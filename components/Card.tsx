@@ -1,10 +1,12 @@
-// import { , Image, Text } from "@mantine/core";
+// Modules
 import styled from "styled-components";
 import { Image } from "@mantine/core";
 
+// Main Function
 function Carad(props: any) {
   const city = props.link;
-  //   const links = props.links[1];
+
+  // Function to get the image url
   function linkToDSrc(l: string) {
     let sc = "https://logo.clearbit.com/";
     l = l.substring(8);
@@ -28,6 +30,7 @@ function Carad(props: any) {
   );
 }
 
+// Styled Components
 const Card = styled.div`
   height: 12rem;
   width: 10rem;
@@ -43,7 +46,7 @@ const Card = styled.div`
   transition: 0.2s ease;
   border: none;
   &:hover {
-    box-shadow: 0px 0px 20px 1px #a2a2a4;
+    box-shadow: 0px 0px 20px 0.1px #515151;
     transform: scale(1.05);
   }
 

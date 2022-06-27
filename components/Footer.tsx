@@ -1,5 +1,7 @@
+// Modules
 import styled from "styled-components";
 
+// Main Function
 function Footer() {
   return (
     <FooterComponent>
@@ -34,6 +36,7 @@ function Footer() {
   );
 }
 
+// Styled Components
 const FooterComponent = styled.footer`
   width: 100%;
   height: 5rem;
