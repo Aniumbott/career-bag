@@ -6,8 +6,8 @@ function Footer() {
   return (
     <FooterComponent>
       <p>
-        <b>Career Bag</b> | A collection of career resources from different
-        citiess around the globe.
+        <b>@Aniumbott | Career Bag</b> - A collection of career resources from
+        different citiess around the globe.
       </p>
       <div className="res">
         <a
